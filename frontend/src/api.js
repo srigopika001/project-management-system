@@ -1,4 +1,6 @@
-const BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
+
+const BASE = import.meta.env.VITE_API_URL || 'https://project-management-system-2-5mer.onrender.com/api'
+
 
 export async function api(path, { method = 'GET', body, token } = {}) {
   const res = await fetch(BASE + path, {
