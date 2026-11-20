@@ -1,4 +1,4 @@
-import 'dotenv/config'
+ import 'dotenv/config'
 import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
@@ -9,7 +9,7 @@ import { verifyLogin, managerOnly } from './middleware/verifyLogin.js'
 import User from './models/User.js'
 
 const app = express()
-app.use(cors({ origin: process.env.CLIENT_URL?.split(',') || '*' }))
+app.use(cors({ origin: true, credentials: true }));
 app.use(express.json())
 
 app.get('/api/health', (_req, res) => res.json({ ok: true }))
